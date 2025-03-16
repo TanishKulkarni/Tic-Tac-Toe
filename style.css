@@ -1,0 +1,245 @@
+:root {
+    --bg-color: #1e1e2e;
+    --text-color: #f8f8f8;
+    --cell-bg: #ffffff;
+    --cell-text: #333;
+    --btn-bg: #444;
+    --btn-text: white;
+    --highlight-color: #ffcc00;
+    --shadow-color: rgba(255, 255, 255, 0.2);
+}
+
+/* 🎨 Light Theme */
+.light-theme {
+    --bg-color: #ffffff;
+    --text-color: #222;
+    --cell-bg: #222;
+    --cell-text: #fff;
+    --btn-bg: #ddd;
+    --btn-text: black;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* 🎮 Game Container */
+.game-container {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 🎮 Multiplayer Info */
+#multiplayer-info {
+    display: none;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 15px;
+    border-radius: 8px;
+    color: white;
+    text-align: center;
+    margin-bottom: 15px;
+    width: 80%;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* 🆔 Room ID */
+#room-id {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--highlight-color);
+    background: #333;
+    padding: 6px 12px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+/* ⏳ Waiting Message */
+#waiting-message {
+    color: #ff5555;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* 🔲 Tic-Tac-Toe Board */
+#board {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    grid-template-rows: repeat(3, 120px);
+    gap: 8px;
+    justify-content: center;
+    margin: auto;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+/* ⬜ Tic-Tac-Toe Cells */
+.cell {
+    width: 120px;
+    height: 120px;
+    background-color: var(--cell-bg);
+    color: var(--cell-text);
+    font-size: 2.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s, color 0.3s, transform 0.2s;
+}
+
+.cell:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+/* 🔴 AI Move Highlight */
+.ai-move {
+    background-color: rgba(255, 0, 0, 0.5);
+    transition: background 0.3s ease-in-out;
+}
+
+/* 📜 AI Move Explanation Button */
+#explain-move {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#explain-move:hover {
+    background: linear-gradient(135deg, #0056b3, #003f7f);
+}
+
+/* 📝 Explanation Box */
+#move-explanation {
+    display: none;
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 12px;
+    border-radius: 6px;
+    margin-top: 15px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* 🔳 Buttons */
+button {
+    background: var(--btn-bg);
+    color: var(--btn-text);
+    border: none;
+    padding: 12px 18px;
+    font-size: 1em;
+    cursor: pointer;
+    margin: 8px;
+    border-radius: 6px;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+    box-shadow: 0 3px 6px var(--shadow-color);
+}
+
+button:hover {
+    transform: scale(1.1);
+    background: #555;
+}
+
+button:active {
+    transform: scale(1);
+}
+
+/* 🎭 Theme Toggle */
+#theme-toggle {
+    background: linear-gradient(135deg, #ff9800, #f44336);
+    color: white;
+    font-weight: bold;
+}
+
+#theme-toggle:hover {
+    background: linear-gradient(135deg, #e68900, #d32f2f);
+}
+
+/* 🔽 Stylish Dropdown */
+#difficulty {
+    background: var(--btn-bg);
+    color: var(--btn-text);
+    border: 2px solid var(--highlight-color);
+    padding: 10px 15px;
+    font-size: 1em;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 3px 6px var(--shadow-color);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-align: center;
+}
+
+/* 🔽 Dropdown Hover & Focus */
+#difficulty:hover,
+#difficulty:focus {
+    background: var(--highlight-color);
+    color: black;
+    border-color: #ffaa00;
+    transform: scale(1.05);
+    outline: none;
+}
+
+/* 🔽 Hide Default Arrow for Dropdown */
+#difficulty::-ms-expand {
+    display: none; /* Hide default arrow in IE */
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 480px) {
+    #board {
+        grid-template-columns: repeat(3, 90px);
+        grid-template-rows: repeat(3, 90px);
+        gap: 6px;
+    }
+
+    .cell {
+        width: 90px;
+        height: 90px;
+        font-size: 2em;
+    }
+
+    button {
+        font-size: 0.9em;
+        padding: 10px 15px;
+    }
+
+    /* 📱 Multiplayer Info Mobile UI */
+    #multiplayer-info {
+        width: 90%;
+        font-size: 1em;
+        padding: 10px;
+    }
+}
+
+/* ✨ Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
